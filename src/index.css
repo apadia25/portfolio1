@@ -1,9 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 *{
-    font-family: "Montserrant", sans-serif;
+    font-family: "Lato";
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #153043;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #455d56; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0355517f; 
+}
+
+
+i{
+  cursor: pointer;
+}
+i:hover{
+  color: white;
 }
