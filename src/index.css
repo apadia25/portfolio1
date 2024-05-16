@@ -37,3 +37,29 @@ i{
 i:hover{
   color: white;
 }
+
+.a{
+  animation: a 1s infinite;
+} 
+
+@keyframes a {
+  0%{
+    opacity: 1 ;
+  }
+  100%{
+    opacity: 0.5;
+  }
+}
+
+.p{
+  animation: p 1s infinite;
+} 
+
+@keyframes p {
+  0%{
+    opacity: 0.5 ;
+  }
+  100%{
+    opacity: 1;
+  }
+}
