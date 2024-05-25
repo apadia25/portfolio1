@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from "react-redux";
 
 const Animation = () => {
-  const words = ["Web Developer & Design Enthusiast"];
+  const { loading, portfolioData } = useSelector((state) => state.root);
+  const { intro } = portfolioData || {};
+  const { caption } = intro || {};
+  const words = caption ? [caption] : [''];
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [currentWord, setCurrentWord] = useState('');

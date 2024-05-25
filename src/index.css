@@ -39,12 +39,15 @@ i:hover{
 }
 
 .a{
-  animation: a 1s infinite;
+  animation: a 10s infinite;
 } 
 
 @keyframes a {
   0%{
     opacity: 1 ;
+  }
+  50%{
+    opacity: 0.5;
   }
   100%{
     opacity: 0.5;
@@ -52,12 +55,15 @@ i:hover{
 }
 
 .p{
-  animation: p 1s infinite;
+  animation: p 10s infinite;
 } 
 
 @keyframes p {
   0%{
     opacity: 0.5 ;
+  }
+  50%{
+    opacity: 0.5;
   }
   100%{
     opacity: 1;

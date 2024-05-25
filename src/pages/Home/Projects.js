@@ -1,9 +1,12 @@
 import React from 'react'
-import { projects } from '../../resources/projects'
+//import { projects } from '../../resources/projects'
 import SectionTitle from '../../components/SectionTitle'
+import { useSelector } from 'react-redux';
 
 function Projects() {
     const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
+    const {loading, portfolioData} = useSelector((state) => state.root);
+    const   {projects} = portfolioData;
   return (
     <div>
       <SectionTitle title="Projects" />
@@ -29,9 +32,9 @@ function Projects() {
                 <div className='flex flex-col gap-5'>
                     <h1 className="text-secondary text-xl">{projects[selectedItemIndex].title}</h1>
 
-                    <p className="text-white">{projects[selectedItemIndex].description}</p>
+                    <p className="text-white">{projects[selectedItemIndex].description1}</p>
                     
-                    <p className='text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p className='text-white'>{projects[selectedItemIndex].description2}</p>
 
 
                     <button className='border-2 border-tertiary text-tertiary  rounded w-32  py-1'><a href={projects[selectedItemIndex].link} target="_blank" rel="noopener noreferrer" className='text-white'>Visit Project</a></button>

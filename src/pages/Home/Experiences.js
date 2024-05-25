@@ -1,10 +1,13 @@
 import React from 'react'
 import SectionTitle from '../../components/SectionTitle'
-import { experiences } from '../../resources/experiences'
+//import { experiences } from '../../resources/experiences'
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function Experiences() {
     const [selectedItemIndex, setSelectedItemIndex] = useState(0);
+    const {loading, portfolioData} = useSelector((state) => state.root);
+    const   {experiences} = portfolioData;
     return (
         <div className='mt-16'>
             <SectionTitle title="Experiences"/>
@@ -28,7 +31,7 @@ function Experiences() {
                 <div className='flex flex-col gap-5'>
                     <h1 className="text-secondary text-xl">{experiences[selectedItemIndex].title}</h1>
                     <h1 className="text-tertiary text-xl">{experiences[selectedItemIndex].company}</h1>
-                    <p className='text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p className='text-white'>{experiences[selectedItemIndex].description}</p>
                 </div>
             </div>
         </div>

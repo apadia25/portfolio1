@@ -1,24 +1,27 @@
 import React from 'react'
 import SectionTitle from '../../components/SectionTitle'
+import { useSelector } from 'react-redux';
 
 function Contact() {
-    const user ={
-        name : "Akshay H. Padia",
-        age: "20",
-        gender: "Male",
-        email: "akpadia02@gmail.com",
-        mobile: "7620680291",
-    }
+    // const user ={
+    //     name : "Akshay H. Padia",
+    //     age: "20",
+    //     gender: "Male",
+    //     email: "akpadia02@gmail.com",
+    //     mobile: "7620680291",
+    // }
+    const {loading, portfolioData} = useSelector((state) => state.root);
+    const   {contact} = portfolioData;
   return (
     <div>
         <SectionTitle title="Contact me"/>
         <div className="flex items-center justify-between md:flex-row flex-col">
             <div className="flex flex-col gap-1">
             <h1 className='text-tertiary'>{'{'}</h1>
-            {Object.keys(user).map((key) => (
+            {Object.keys(contact).map((key) => (
                 <h1 className='ml-8'>
                     <span className='text-tertiary'>{key} : </span>
-                    <span className='text-tertiary'>{user[key]}</span>
+                    <span className='text-tertiary'>{contact[key]}</span>
                 </h1>
             ))}
             <h1 className='text-tertiary'>{'}'}</h1>
